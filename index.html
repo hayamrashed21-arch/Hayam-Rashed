@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>المعمل الباثولوجي</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Cairo', sans-serif;
+      background-color: #f0f2f5;
+    }
+
+    /* الهيدر */
+    .site-header {
+      background-color: #04243f;
+      color: white;
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .container {
+      width: 90%;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+    }
+    .logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  width: 50px; /* حجم اللوجو */
+  height: 50px;
+  object-fit: contain;
+  margin-right: 10px; /* مسافة بين الصورة والنص */
+}
+
+.logo h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+    .nav-links {
+      display: flex;
+    }
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover {
+      color: #4CAF50;
+    }
+    .menu-icon {
+      display: none;
+      font-size: 26px;
+      cursor: pointer;
+    }
+    .hero {
+    background-image: url('my-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    padding: 50px 30px;
+    direction: rtl;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+  }
+
+  .hero-header {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+
+  .hero-logo-box {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .hero-logo-img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+  }
+
+  .hero-lab-name {
+    font-size: 26px;
+    line-height: 1.4;
+    margin: 0;
+    text-align: right;
+  }
+
+  .hero-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 60px;
+  }
+
+  .hero-logo-box {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  animation: fadeIn 2s ease forwards;
+}
+
+.text-content {
+  flex: 1;
+  font-size: 18px;
+  line-height: 2;
+  max-width: 600px;
+  text-align: right;
+  opacity: 0;
+  animation: fadeSlideRight 1.5s ease forwards;
+  animation-delay: 0.5s;
+}
+
+.image-content {
+  
+  flex: 1;
+  text-align: center;
+  opacity: 0;
+  animation: fadeSlideLeft 1.5s ease forwards;
+  animation-delay: 0.5s;
+}
+
+
+.hero-image {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 6px solid white;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.hero-image:hover {
+  transform: scale(2) rotate(1.5deg); /* تكبير + دوران بسيط */
+  box-shadow: 0 12px 25px rgba(0, 140, 255, 0.3); /* توهج أزرق خفيف */
+}
+
+
+  /* موبايل */
+  @media (max-width: 768px) {
+    .hero-body {
+      flex-direction: column;
+    }
+
+    .hero-header {
+      flex-direction: column;
+    }
+
+    .hero-logo-box {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .text-content, .image-content {
+      max-width: 100%;
+    }
+
+    .hero-image {
+      width: 200px;
+      height: 200px;
+    }
+  }
+  @keyframes fadeSlideRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeSlideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+.features {
+  padding: 80px 20px;
+  text-align: center;
+  background: linear-gradient(to bottom, #e3f2fd, #ffffff);
+}
+
+.features h2 {
+  font-size: 36px;
+  margin-bottom: 50px;
+  color: #04243f;
+  position: relative;
+}
+
+.features h2::after {
+  content: '';
+  width: 80px;
+  height: 3px;
+  background: #2196f3;
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.features-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.feature {
+  background: white;
+  padding: 25px 20px;
+  border-radius: 16px;
+  width: 280px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.12);
+}
+
+.feature img {
+  width: 70px;
+  margin-bottom: 15px;
+}
+
+.feature h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #0a2767;
+}
+
+.feature p {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.6;
+}
+
+    /* تواصل معنا */
+    .contact {
+      background-color: #04243f;
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .contact h2 {
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+    .contact p {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    footer {
+  background: #031a2d;
+  color: white;
+  text-align: center;
+  padding: 15px 10px;
+  font-size: 14px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-content span {
+  margin-right: 15px; /* المسافة بين النص والأيقونات */
+}
+
+.social-icons a {
+  margin: 0 10px;
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  color: #ff9800; /* تغيير اللون عند التمرير */
+}
+
+    /* موبايل */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #04243f;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        border-radius: 0 0 10px 10px;
+      }
+      .nav-links a {
+        padding: 10px;
+        margin: 0;
+        border-bottom: 1px solid #4CAF50;
+      }
+      .menu-icon {
+        display: block;
+      }
+    }
+    .why-us {
+  padding: 80px 20px;
+  background: #f3faff;
+  text-align: center;
+}
+
+.why-us h2 {
+  font-size: 34px;
+  margin-bottom: 50px;
+  color: #0b2e59;
+}
+
+.why-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.why-box {
+  background: white;
+  padding: 30px;
+  width: 250px;
+  border-radius: 14px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease;
+}
+
+.why-box:hover {
+  transform: translateY(-10px);
+}
+
+.why-box i {
+  font-size: 40px;
+  color: #007bff;
+  margin-bottom: 15px;
+}
+
+.why-box h3 {
+  font-size: 20px;
+  color: #093b73;
+  margin-bottom: 10px;
+}
+
+.why-box p {
+  color: #555;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.stats {
+  background: #04243f;
+  color: white;
+  padding: 70px 20px;
+  text-align: center;
+}
+
+.stats-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.stat {
+  max-width: 200px;
+}
+
+.stat h3 {
+  font-size: 40px;
+  color: #00e6e6;
+  margin-bottom: 10px;
+}
+
+.stat p {
+  font-size: 16px;
+}
+.analysis-types {
+  background: #f5fbff;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.analysis-types h2 {
+  font-size: 32px;
+  color: #05395d;
+  margin-bottom: 40px;
+}
+
+.analysis-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.analysis-box {
+  background: white;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  width: 200px;
+  transition: transform 0.3s ease;
+}
+
+.analysis-box:hover {
+  transform: translateY(-8px);
+}
+
+.analysis-box img {
+  width: 70px;
+  height: 70px;
+  margin-bottom: 15px;
+}
+
+.analysis-box h4 {
+  font-size: 18px;
+  color: #07406f;
+}
+.map-section {
+  padding: 70px 20px;
+  background: #eef7ff;
+  text-align: center;
+}
+
+.map-section h2 {
+  font-size: 30px;
+  margin-bottom: 30px;
+  color: #0b2c4d;
+}
+
+.map-container {
+  position: relative;
+  max-width: 900px;
+  margin: auto;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.map-button {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  background: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.map-button:hover {
+  background: #005dc1;
+}
+.call-button {
+  display: inline-block;
+  margin-top: 20px;
+  background-color: #28a745;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-size: 16px;
+  text-decoration: none;
+  font-weight: bold;
+  animation: pulse 1.5s infinite;
+  transition: background 0.3s;
+}
+
+.call-button:hover {
+  background-color: #1e7e34;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+.articles {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.articles h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+  color: #04243f;
+}
+
+.articles-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.article-box {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.article-box h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #08073a;
+}
+
+.article-box p {
+  font-size: 14px;
+  color: #555;
+}
+
+.article-box a {
+  text-decoration: none;
+  color: #007bff;
+  transition: color 0.3s;
+}
+
+.article-box a:hover {
+  color: #0056b3;
+}
+.latest-articles {
+  padding: 60px 20px;
+  background: #f7f7f7;
+  text-align: center;
+}
+
+.latest-articles h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+  color: #04243f;
+}
+
+.latest-articles-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.article-box {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.article-box h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #08073a;
+}
+
+.article-box p {
+  font-size: 14px;
+  color: #555;
+}
+
+.article-box a {
+  text-decoration: none;
+  color: #007bff;
+  transition: color 0.3s;
+}
+
+.article-box a:hover {
+  color: #0056b3;
+}
+.faq {
+  padding: 60px 20px;
+  background: #eef7ff;
+  text-align: center;
+}
+
+.faq h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+  color: #04243f;
+}
+
+.faq-item {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+.faq-item h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #08073a;
+}
+
+.faq-item p {
+  font-size: 14px;
+  color: #555;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  resize: none;
+}
+
+button {
+  padding: 10px 20px;
+  margin-top: 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #218838;
+}
+/* تصميم المقالات */
+.articles-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.article-box {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.article-box:hover {
+  transform: scale(1.05);
+}
+
+.article-box h3 {
+  font-size: 18px;
+  color: #04243f;
+}
+
+.article-box p {
+  font-size: 14px;
+  color: #555;
+}
+
+/* نافذة منبثقة (Modal) */
+.modal {
+  display: none; /* نافذة مخفية بشكل افتراضي */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: white;
+  margin: 15% auto;
+  padding: 20px;
+  border-radius: 8px;
+  width: 60%;
+  max-width: 600px;
+}
+
+.close {
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+  </style>
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="logo">
+      <img src="logo.png" alt="Logo" class="logo-img">
+      <h1>Prof.Dr Hayam Rashed</h1>
+    </div>
+
+ <nav class="nav-links" id="navLinks">
+  <a href="#" onclick="openEditorWindow()">
+    🖊️ 
+  </a>
+  <a href="index.html">Home</a>
+  <a href="search.html">search&Reports</a>
+  <a href="Cytology Report.html">Cytology Report</a>
+  <a href="Pathology Report.html">Pathology Report</a>
+  <a href="IHC Report.html">IHC Report</a>
+   <a href="diagnosis.html">archives</a>
+  <a href="csv.html">csv</a>
+</nav>
+
+
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      var nav = document.getElementById('navLinks');
+      if (nav.style.display === "flex") {
+        nav.style.display = "none";
+      } else {
+        nav.style.display = "flex";
+      }
+    }
+  </script>
+</header>
+
+<section class="hero">
+  <!-- العنوان واللوجو -->
+  <div class="hero-header">
+    <div class="hero-logo-box">
+      <img src="logo2.png" alt="Lab Logo" class="hero-logo-img">
+      <h2 class="hero-lab-name">Laboratory<br>Prof.Dr Hayam Rashed</h2>
+    </div>
+  </div>
+
+  <!-- النصوص والصورة الدائرية -->
+  <div class="hero-body">
+    <div class="text-content">
+      <p>
+        نحن نقدم لكم فقط أفضل الخدمات:<br>
+        التشخيص الباثولوجي للعينات المستأصلة جراحيًا بكافة الطرق.<br>
+        التشخيص الخلوي لعينات السوائل رسائل بلوري - سائل من البطن - البول.<br>
+        سحب عينات بالإبرة داخل المعمل بغرض التشخيص المبدئي للحالات قبل الجراحة.<br>
+        سحب عينات بالإبرة من الثدي للتشخيص المبكر لأورام الثدي.<br>
+        تحليل الصبغات المناعية وعمل مستقبلات الهرمونات ودلالات الأورام.<br>
+        مراجعة الشرائح وتشخيص الأورام غير معلومة المنشأ.
+      </p>
+    </div>
+    <div class="image-content">
+      <img src="Homepage.png" alt="Dr Hayam Rashed" class="hero-image">
+    </div>
+  </div>
+</section>
+
+
+
+<!-- مكتبة AOS للأنيميشن -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+<section class="analysis-types">
+  <h2>أنواع التقارير</h2>
+  <div class="analysis-grid">
+    <div class="analysis-box" data-aos="zoom-in">
+      <img src="immunology_9599659.png" alt="Cytology Report">
+      <h4>Cytology Report</h4>
+    </div>
+    <div class="analysis-box" data-aos="zoom-in" data-aos-delay="200">
+      <img src="report_8205748.png" alt="Pathology Report">
+      <h4>Pathology Report</h4>
+    </div>
+    <div class="analysis-box" data-aos="zoom-in" data-aos-delay="400">
+      <img src="oncology_8358596.png" alt="IHC Report">
+      <h4>IHC Report</h4>
+    </div>
+  </div>
+</section>
+
+<section class="features">
+  <h2>خدماتنا المميزة</h2>
+  <div class="features-grid">
+    <div class="feature" data-aos="fade-up" data-aos-delay="100">
+      <img src="courageous_17225402.png" alt="تحاليل دقيقة">
+      <h3>تحاليل دقيقة</h3>
+      <p>أحدث الأجهزة الطبية مع أعلى معايير الجودة والدقة.</p>
+    </div>
+    <div class="feature" data-aos="fade-up" data-aos-delay="200">
+      <img src="schedule_3652191.png" alt="تقارير سريعة">
+      <h3>تقارير سريعة</h3>
+      <p>نتائج سريعة مع دقة عالية خلال 24 ساعة.</p>
+    </div>
+    <div class="feature" data-aos="fade-up" data-aos-delay="300">
+      <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="فريق متميز">
+      <h3>فريق متميز</h3>
+      <p>خبرة طويلة في مجال الباثولوجي والأنسجة.</p>
+    </div>
+  </div>
+</section>
+<section class="why-us">
+  <h2>لماذا نحن؟</h2>
+  <div class="why-grid">
+    <div class="why-box" data-aos="flip-left">
+      <i class="fas fa-microscope"></i>
+      <h3>أحدث التكنولوجيا</h3>
+      <p>نستخدم أجهزة متقدمة لضمان دقة النتائج.</p>
+    </div>
+    <div class="why-box" data-aos="flip-left" data-aos-delay="200">
+      <i class="fas fa-user-md"></i>
+      <h3>فريق متخصص</h3>
+      <p>فريق طبي ذو خبرة طويلة في التشخيص المختبري.</p>
+    </div>
+    <div class="why-box" data-aos="flip-left" data-aos-delay="400">
+      <i class="fas fa-clock"></i>
+      <h3>سرعة في الإنجاز</h3>
+      <p>تقارير جاهزة في أقل من 24 ساعة.</p>
+    </div>
+  </div>
+</section>
+<section class="articles">
+  <h2>مكتبة طبية</h2>
+  <div class="articles-grid">
+    <div class="article-box" onclick="openModal('article1')">
+      <h3>كيف تستعد لتحليل الدم؟</h3>
+      <p>تعرف على أهم التحضيرات التي يجب اتباعها قبل إجراء تحليل الدم.</p>
+    </div>
+    <div class="article-box" onclick="openModal('article2')">
+      <h3>ما هو الـ Cytology Report ولماذا هو مهم؟</h3>
+      <p>فهم تقرير الـ Cytology وأهمية هذا التقرير في تشخيص الأمراض.</p>
+    </div>
+    <div class="article-box" onclick="openModal('article3')">
+      <h3>ما هو الـ Pathology Report ولماذا هو مهم؟</h3>
+      <p>كل ما تحتاج معرفته عن تقرير الأنسجة وكيفية تفسير نتائجه.</p>
+    </div>
+    <div class="article-box" onclick="openModal('article4')">
+      <h3>ما هو الـ IHC Report ولماذا هو مهم؟</h3>
+      <p>استكشف أهمية تقرير الـ IHC في تشخيص الأمراض وتحديد العلاج.</p>
+    </div>
+  </div>
+</section>
+<script>
+  // فتح النافذة المنبثقة وعرض التفاصيل
+function openModal(articleId) {
+  const modal = document.getElementById('modal');
+  const title = document.getElementById('modal-title');
+  const description = document.getElementById('modal-description');
+
+  // إضافة الشرح التفصيلي حسب المقال
+  if (articleId === 'article1') {
+    title.innerText = "كيف تستعد لتحليل الدم؟";
+    description.innerText = "من المهم اتباع بعض التحضيرات قبل إجراء تحليل الدم لضمان نتائج دقيقة. تأكد من الصيام، إبلاغ الطبيب عن أي أدوية تتناولها، وغيرها من التحضيرات المهمة.";
+  } else if (articleId === 'article2') {
+    title.innerText = "ما هو الـ Cytology Report ولماذا هو مهم؟";
+    description.innerText = "تقرير الـ Cytology هو فحص يتم فيه تحليل الخلايا المأخوذة من الجسم لتحديد وجود أي تشوهات أو أمراض مثل السرطان. يساعد هذا التقرير في التشخيص المبكر.";
+  } else if (articleId === 'article3') {
+    title.innerText = "ما هو الـ Pathology Report ولماذا هو مهم؟";
+    description.innerText = "تقرير الباثولوجيا هو تقرير يتم فيه فحص الأنسجة المأخوذة من الجسم لتحديد نوع المرض أو الحالة المرضية. يعد هذا التقرير جزءًا أساسيًا في التشخيص.";
+  } else if (articleId === 'article4') {
+    title.innerText = "ما هو الـ IHC Report ولماذا هو مهم؟";
+    description.innerText = "تقرير الـ IHC (Immunohistochemistry) يتم فيه استخدام الأجسام المضادة لتحديد الخلايا السرطانية أو الأنسجة المتضررة، مما يساعد في اختيار العلاج المناسب.";
+  }
+
+  // عرض النافذة المنبثقة
+  modal.style.display = "block";
+}
+
+// إغلاق النافذة المنبثقة
+function closeModal() {
+  const modal = document.getElementById('modal');
+  modal.style.display = "none";
+}
+
+// إغلاق النافذة عند الضغط خارجها
+window.onclick = function(event) {
+  const modal = document.getElementById('modal');
+  if (event.target === modal) {
+    modal.style.display = "none";
+  }
+}
+
+</script>
+<!-- نافذة منبثقة لعرض التفاصيل -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <h3 id="modal-title"></h3>
+    <p id="modal-description"></p>
+  </div>
+</div>
+
+
+<section class="map-section">
+  <h2>موقعنا</h2>
+  <div class="map-container" data-aos="fade-up">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13618.561313973276!2d31.4944785!3d30.5911582!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzDCsDM1JzI4LjIiTiAzMcKwMjknNDAuMSJF!5e0!3m2!1sar!2seg!4v1715089200000!5m2!1sar!2seg"
+      width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy">
+    </iframe>
+    <a href="https://maps.app.goo.gl/Vd1MeyHKHY4LvA1o8" target="_blank" class="map-button">
+      الطريق إلى المختبر
+    </a>
+    <a href="tel:+01022932096" class="call-button" data-aos="fade-up" data-aos-delay="200">
+      📞 اتصل الآن
+    </a>
+
+  </div>
+</section>
+
+<section class="latest-articles">
+  <h2>أحدث المقالات</h2>
+  <div class="latest-articles-grid">
+    <div class="article-box">
+      <h3><a href="article5.html">كيف تساهم الأبحاث الحديثة في تحسين تشخيص الأمراض؟</a></h3>
+      <p>استكشف أحدث الدراسات والأبحاث في مجال الباثولوجيا وكيف تؤثر في نتائج التشخيص.</p>
+    </div>
+    <div class="article-box">
+      <h3><a href="article6.html">الأدوية الجديدة المستخدمة في معالجة الأورام</a></h3>
+      <p>تعرف على العلاجات الدوائية الحديثة للأورام وكيف يمكن أن تساعد المرضى.</p>
+    </div>
+  </div>
+</section>
+<section class="faq">
+  <h2>الأسئلة الشائعة</h2>
+  <div id="faq-list"></div>
+
+  <h3>أضف سؤالاً:</h3>
+  <textarea id="user-question" placeholder="اكتب سؤالك هنا..."></textarea>
+  <button onclick="addQuestion()">أضف السؤال</button>
+
+  <h3>أضف إجابة:</h3>
+  <textarea id="user-answer" placeholder="اكتب إجابتك هنا..."></textarea>
+  <button onclick="addAnswer()">أضف الإجابة</button>
+</section>
+<script>
+  // تمهيد تحميل الأسئلة والإجابات من localStorage
+window.onload = function() {
+  loadQuestions();
+};
+
+// إضافة سؤال جديد
+function addQuestion() {
+  const questionText = document.getElementById('user-question').value.trim();
+
+  if (questionText) {
+    const questions = JSON.parse(localStorage.getItem('questions')) || [];
+    questions.push({ question: questionText, answers: [] });
+    localStorage.setItem('questions', JSON.stringify(questions));
+    document.getElementById('user-question').value = ''; // إفراغ النص بعد الإضافة
+    loadQuestions();
+  }
+}
+
+// إضافة إجابة على السؤال المحدد
+function addAnswer() {
+  const answerText = document.getElementById('user-answer').value.trim();
+  const questionIndex = document.querySelector('input[name="question"]:checked')?.value;
+
+  if (answerText && questionIndex !== undefined) {
+    const questions = JSON.parse(localStorage.getItem('questions'));
+    questions[questionIndex].answers.push(answerText);
+    localStorage.setItem('questions', JSON.stringify(questions));
+    document.getElementById('user-answer').value = ''; // إفراغ النص بعد الإضافة
+    loadQuestions();
+  } else {
+    alert("يرجى اختيار سؤال أولاً.");
+  }
+}
+
+// تحميل الأسئلة والإجابات من localStorage وعرضها
+function loadQuestions() {
+  const questions = JSON.parse(localStorage.getItem('questions')) || [];
+  const faqList = document.getElementById('faq-list');
+  faqList.innerHTML = ''; // مسح المحتوى السابق
+
+  questions.forEach((item, index) => {
+    const faqItem = document.createElement('div');
+    faqItem.classList.add('faq-item');
+    faqItem.innerHTML = `
+      <h3>
+        <input type="radio" name="question" value="${index}"> ${item.question}
+      </h3>
+      <div class="answers">
+        ${item.answers.map(answer => `<p>${answer}</p>`).join('')}
+      </div>
+    `;
+    faqList.appendChild(faqItem);
+  });
+}
+
+</script>
+<section class="stats" id="stats">
+  <div class="stats-grid">
+    <div class="stat" data-aos="zoom-in">
+      <h3 class="counter" data-target="1500">0</h3>
+      <p>تحليل مكتمل</p>
+    </div>
+    <div class="stat" data-aos="zoom-in" data-aos-delay="200">
+      <h3 class="counter" data-target="25">0</h3>
+      <p>سنة خبرة</p>
+    </div>
+    <div class="stat" data-aos="zoom-in" data-aos-delay="400">
+      <h3 class="counter" data-target="98">0</h3>
+      <p>% رضا العملاء</p>
+    </div>
+  </div>
+</section>
+<script>
+  const counters = document.querySelectorAll('.counter');
+  counters.forEach(counter => {
+    const updateCount = () => {
+      const target = +counter.getAttribute('data-target');
+      const count = +counter.innerText;
+      const speed = 50; // smaller = faster
+
+      if (count < target) {
+        counter.innerText = Math.ceil(count + (target - count) / speed);
+        setTimeout(updateCount, 20);
+      } else {
+        counter.innerText = target;
+      }
+    };
+    // تبدأ فقط عند التمرير
+    const observer = new IntersectionObserver(entries => {
+      if (entries[0].isIntersecting) {
+        updateCount();
+        observer.disconnect();
+      }
+    }, { threshold: 0.6 });
+    observer.observe(counter);
+  });
+
+
+
+
+   function openEditorWindow() {
+    const editorWindow = window.open('', 'TextEditorWindow', 'width=600,height=400');
+
+    // محتوى صفحة المحرر
+    const htmlContent = `
+      <!DOCTYPE html>
+      <html lang="ar" dir="rtl">
+      <head>
+        <meta charset="UTF-8">
+        <title>محرر النص</title>
+        <style>
+          body {
+            font-family: 'Cairo', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+          }
+
+          header {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+          }
+
+          textarea {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            resize: none;
+            font-size: 16px;
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            outline: none;
+          }
+
+          button {
+            background-color: #dc3545;
+            color: white;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+          }
+        </style>
+      </head>
+      <body>
+        <header>محرر النص</header>
+        <textarea placeholder="اكتب هنا..."></textarea>
+        <button onclick="window.close()">إغلاق</button>
+      </body>
+      </html>
+    `;
+
+    editorWindow.document.write(htmlContent);
+    editorWindow.document.close(); // مهم لضمان تحميل الصفحة
+  }
+</script>
+
+
+<section class="contact">
+  <h2>تواصل معنا</h2>
+  <p>📞  01008843420 – 01022932096</p>
+  <p>📧 hayamrashed92@gmail.com</p>
+  <h2>ميدان القومية _بجوار مطعم أورينتال  </h2>
+</section>
+
+<footer>
+  <div class="footer-content">
+    <div class="social-icons">
+      <a href="https://www.facebook.com/mohamed.alsayed.219557/?locale=ar_AR" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="tel:+01004335462"><i class="fas fa-phone-alt"></i></a>
+      <a href="https://wa.me/01004335462" target="_blank"><i class="fab fa-whatsapp"></i></a> <!-- رابط WhatsApp -->
+      <span>Copyright © 2025 – Prof.Dr Hayam Rashed || Developed by Mohamed Elsayed</span>
+    </div>
+  </div>
+</footer>
+
+<!-- رابط لأيقونات FontAwesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+
+</body>
+</html>
